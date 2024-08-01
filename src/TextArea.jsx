@@ -12,6 +12,8 @@ export default function TextArea() {
     } else if (newText.includes('@')) {
       newText = newText.replace('@', '');
       setWarningText('Warning: Avoid using @ in your text');
+    } else {
+      setWarningText('');
     }
     setText(newText);
   };
