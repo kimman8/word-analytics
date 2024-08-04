@@ -1,7 +1,7 @@
 import Container from './Container';
 import Footer from './Footer';
 import Header from './Header';
-import './index.css';
+import '../index.css';
 
 function App() {
   return (
