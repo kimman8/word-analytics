@@ -12,7 +12,9 @@ export default function Stats({ stats }) {
 function Stat({ stat, label }) {
   return (
     <div className="stat">
-      <span className="stat__number">{stat}</span>
+      <span className={`stat__number ${stat < 0 ? 'stat__number--limit' : ''}`}>
+        {stat}
+      </span>
       <h2 className="second-heading">{label}</h2>
     </div>
   );
