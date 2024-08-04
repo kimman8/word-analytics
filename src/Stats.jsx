@@ -1,10 +1,13 @@
-export default function Stats() {
+export default function Stats({ text, characterLength }) {
+  const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  const instaLimit = 210 - characterLength;
+  const faceBookLimit = 2200 - wordCount;
   return (
     <section className="stats">
-      <Stat stat="0" label="Characters" />
-      <Stat stat="0" label="Words" />
-      <Stat stat="210" label="Instagram" />
-      <Stat stat="2200" label="Facebook" />
+      <Stat stat={characterLength} label="Characters" />
+      <Stat stat={wordCount} label="Words" />
+      <Stat stat={instaLimit} label="Instagram" />
+      <Stat stat={faceBookLimit} label="Facebook" />
     </section>
   );
 }
